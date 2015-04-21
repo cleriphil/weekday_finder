@@ -1,16 +1,21 @@
-class Time
+class String
   define_method(:weekday_finder) do
-    if self.monday?()
+    date_array = self.split("/")
+    year = date_array.at(2)
+    month = date_array.at(0)
+    day = date_array.at(1)
+    date = Time.new(year, month, day)
+    if date.monday?()
       "Monday"
-    elsif self.tuesday?()
+    elsif date.tuesday?()
       "Tuesday"
-    elsif self.wednesday?()
+    elsif date.wednesday?()
       "Wednesday"
-    elsif self.thursday?()
+    elsif date.thursday?()
       "Thursday"
-    elsif self.friday?()
+    elsif date.friday?()
       "Friday"
-    elsif self.saturday?()
+    elsif date.saturday?()
       "Saturday"
     else
       "Sunday"
